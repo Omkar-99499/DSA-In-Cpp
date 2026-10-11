@@ -1,0 +1,5 @@
+## Problem Statement
+Design and implement a Train Coach Management System using a Singly Linked List in C++.
+The system manages train coaches dynamically. It allows users to add a new coach, display all coaches, and remove the first coach. 
+Each coach is represented by a node containing the coach number and a pointer to the next coach.
+The main objective of this project is to understand linked lists, pointers, dynamic memory allocation, insertion, deletion, and traversal in C++.
