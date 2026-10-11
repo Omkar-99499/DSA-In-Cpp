@@ -158,7 +158,7 @@ int main()
             break;
 
         case 5:
-            cout << "Program Ended.\n";
+            cout << "Thank You! \n";
             break;
 
         default:
