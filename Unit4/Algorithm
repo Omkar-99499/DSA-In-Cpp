@@ -1,0 +1,23 @@
+###  Algorithm
+
+Step 1: Start the program.
+
+Step 2: Accept the size of the array from the user.
+
+Step 3: Allocate memory dynamically using `new`.
+
+Step 4: Accept array elements from the user.
+
+Step 5: Display all array elements.
+
+Step 6: Accept the new size of the array.
+
+Step 7: Allocate a new array and copy the existing elements into it.
+
+Step 8: Accept additional elements if the new array size is larger.
+
+Step 9: Display the updated array elements.
+
+Step 10: Release the allocated memory using `delete[]`.
+
+Step 11: Stop the program.
