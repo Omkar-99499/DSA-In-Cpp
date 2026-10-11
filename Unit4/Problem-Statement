@@ -1,0 +1,5 @@
+## Problem Statement
+Design and implement a C++ program to demonstrate dynamic memory allocation using new and delete.
+The program should allocate memory dynamically for an array, accept elements from the user, and display the entered elements.
+It should also allow the user to resize the array by allocating new memory and copying the existing elements. Finally, the program should release the allocated memory.
+The main objective of this program is to understand dynamic memory allocation, memory utilization,
