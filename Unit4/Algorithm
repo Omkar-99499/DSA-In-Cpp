@@ -1,23 +1,23 @@
-###  Algorithm
+##  Algorithm
 
 Step 1: Start the program.
 
-Step 2: Accept the size of the array from the user.
+Step 2: Initialize the root pointer to NULL.
 
-Step 3: Allocate memory dynamically using `new`.
+Step 3: Display the menu:
 
-Step 4: Accept array elements from the user.
+1. Add Product
+2. Display Products
+3. Exit
 
-Step 5: Display all array elements.
+Step 4: Accept the user's choice.
 
-Step 6: Accept the new size of the array.
+Step 5: If the choice is Add Product, enter the Product ID and insert it into the Binary Search Tree.
 
-Step 7: Allocate a new array and copy the existing elements into it.
+Step 6: If the choice is Display Products, perform inorder traversal and display the Product IDs in ascending order.
 
-Step 8: Accept additional elements if the new array size is larger.
+Step 7: If the choice is Exit, terminate the program.
 
-Step 9: Display the updated array elements.
+Step 8: Repeat the process until the user selects Exit.
 
-Step 10: Release the allocated memory using `delete[]`.
-
-Step 11: Stop the program.
+Step 9: Stop the program.
