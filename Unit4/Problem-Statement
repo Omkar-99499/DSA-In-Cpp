@@ -1,5 +1,4 @@
 ## Problem Statement
-Design and implement a C++ program to demonstrate dynamic memory allocation using new and delete.
-The program should allocate memory dynamically for an array, accept elements from the user, and display the entered elements.
-It should also allow the user to resize the array by allocating new memory and copying the existing elements. Finally, the program should release the allocated memory.
-The main objective of this program is to understand dynamic memory allocation, memory utilization,
+Design and implement a Product Tree Management System using a Binary Search Tree (BST) in C++.
+The system stores product IDs in a Binary Search Tree. It allows users to add new products and display all products in ascending order of their IDs.
+The main objective of this project is to understand the concepts of Binary Search Trees, node creation, insertion, and inorder traversal in C++.
