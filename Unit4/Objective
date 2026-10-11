@@ -1,0 +1,8 @@
+## Objectives
+To understand the concept of dynamic memory allocation.
+To allocate memory dynamically using new.
+To store and display array elements.
+To resize an array according to user requirements.
+To copy data from one array to another.
+To release allocated memory using delete[].
+To understand efficient memory utilization in C++.
