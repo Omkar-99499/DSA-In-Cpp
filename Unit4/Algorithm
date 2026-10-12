@@ -1,23 +1,11 @@
 ##  Algorithm
 
-Step 1: Start the program.
-
-Step 2: Initialize the root pointer to NULL.
-
-Step 3: Display the menu:
-
-1. Add Product
-2. Display Products
-3. Exit
-
-Step 4: Accept the user's choice.
-
-Step 5: If the choice is Add Product, enter the Product ID and insert it into the Binary Search Tree.
-
-Step 6: If the choice is Display Products, perform inorder traversal and display the Product IDs in ascending order.
-
-Step 7: If the choice is Exit, terminate the program.
-
-Step 8: Repeat the process until the user selects Exit.
-
-Step 9: Stop the program.
+Start the program.
+Create an inorder-threaded binary search tree.
+Insert the given nodes into the tree.
+Identify the inorder predecessor of the specified node.
+Display the predecessor and successor threads for every node.
+Perform reverse inorder traversal using threads.
+Perform conventional reverse inorder traversal.
+Compare both traversal outputs.
+Stop the program.
