@@ -1,8 +1,6 @@
 ## Objectives
-To understand the concept of a Binary Search Tree (BST).
-To store product IDs using tree nodes.
-To insert new products into the BST.
-To display products in ascending order.
-To perform inorder traversal of the tree.
-To understand pointers and dynamic memory allocation in C++.
-To learn basic tree operations using Data Structures and Algorithms.
+To understand the concept of an inorder-threaded binary tree.
+To find the inorder predecessor of a given node.
+To display predecessor and successor threads for every node.
+To perform reverse inorder traversal using threads.
+To compare threaded traversal with conventional BST traversal.
