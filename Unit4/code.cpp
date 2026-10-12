@@ -1,171 +1,243 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 struct Node
 {
-    int id;
-    string name;
-    float price;
+    int data;
     Node *left, *right;
+    bool lthread, rthread;
 };
 
-Node* createNode(int id, string name, float price)
+Node* createNode(int value)
 {
-    Node* newNode = new Node;
-    newNode->id = id;
-    newNode->name = name;
-    newNode->price = price;
-    newNode->left = newNode->right = nullptr;
-    return newNode;
+    Node* temp = new Node;
+
+    temp->data = value;
+    temp->left = nullptr;
+    temp->right = nullptr;
+    temp->lthread = true;
+    temp->rthread = true;
+
+    return temp;
 }
 
-Node* insert(Node* root, int id, string name, float price)
+Node* insert(Node* root, int value)
 {
-    if (root == nullptr)
-        return createNode(id, name, price);
+    Node* ptr = root;
+    Node* parent = nullptr;
 
-    if (id < root->id)
-        root->left = insert(root->left, id, name, price);
-    else if (id > root->id)
-        root->right = insert(root->right, id, name, price);
-    else
-        cout << "Product ID already exists!\n";
-
-    return root;
-}
-
-void display(Node* root)
-{
-    if (root != nullptr)
+    while (ptr != nullptr)
     {
-        display(root->left);
-        cout << "ID: " << root->id
-             << "  Name: " << root->name
-             << "  Price: " << root->price << endl;
-        display(root->right);
+        if (value == ptr->data)
+            return root;
+
+        parent = ptr;
+
+        if (value < ptr->data)
+        {
+            if (!ptr->lthread)
+                ptr = ptr->left;
+            else
+                break;
+        }
+        else
+        {
+            if (!ptr->rthread)
+                ptr = ptr->right;
+            else
+                break;
+        }
     }
-}
 
-Node* search(Node* root, int id)
-{
-    if (root == nullptr || root->id == id)
-        return root;
+    Node* temp = createNode(value);
 
-    if (id < root->id)
-        return search(root->left, id);
+    if (parent == nullptr)
+    {
+        root = temp;
+    }
+    else if (value < parent->data)
+    {
+        temp->left = parent->left;
+        temp->right = parent;
 
-    return search(root->right, id);
-}
-
-Node* minimum(Node* root)
-{
-    while (root != nullptr && root->left != nullptr)
-        root = root->left;
-
-    return root;
-}
-
-Node* deleteProduct(Node* root, int id)
-{
-    if (root == nullptr)
-        return root;
-
-    if (id < root->id)
-        root->left = deleteProduct(root->left, id);
-    else if (id > root->id)
-        root->right = deleteProduct(root->right, id);
+        parent->lthread = false;
+        parent->left = temp;
+    }
     else
     {
-        if (root->left == nullptr)
-        {
-            Node* temp = root->right;
-            delete root;
-            return temp;
-        }
-        else if (root->right == nullptr)
-        {
-            Node* temp = root->left;
-            delete root;
-            return temp;
-        }
+        temp->left = parent;
+        temp->right = parent->right;
 
-        Node* temp = minimum(root->right);
-        root->id = temp->id;
-        root->name = temp->name;
-        root->price = temp->price;
-        root->right = deleteProduct(root->right, temp->id);
+        parent->rthread = false;
+        parent->right = temp;
     }
 
     return root;
+}
+
+// Find the inorder predecessor
+Node* predecessor(Node* ptr)
+{
+    if (ptr->lthread)
+        return ptr->left;
+
+    ptr = ptr->left;
+
+    while (!ptr->rthread)
+        ptr = ptr->right;
+
+    return ptr;
+}
+
+// Find the inorder successor
+Node* successor(Node* ptr)
+{
+    if (ptr->rthread)
+        return ptr->right;
+
+    ptr = ptr->right;
+
+    while (!ptr->lthread)
+        ptr = ptr->left;
+
+    return ptr;
+}
+
+// Display predecessor and successor threads
+void displayThreads(Node* root)
+{
+    Node* ptr = root;
+
+    while (ptr != nullptr && !ptr->lthread)
+        ptr = ptr->left;
+
+    cout << "\nPredecessor and Successor Threads:\n";
+
+    while (ptr != nullptr)
+    {
+        cout << "Node: " << ptr->data;
+
+        if (ptr->lthread)
+        {
+            cout << " | Predecessor: ";
+            if (ptr->left != nullptr)
+                cout << ptr->left->data;
+            else
+                cout << "NULL";
+        }
+
+        if (ptr->rthread)
+        {
+            cout << " | Successor: ";
+            if (ptr->right != nullptr)
+                cout << ptr->right->data;
+            else
+                cout << "NULL";
+        }
+
+        cout << endl;
+        ptr = successor(ptr);
+    }
+}
+
+// Reverse inorder traversal using threads
+void reverseThreaded(Node* root)
+{
+    Node* ptr = root;
+
+    if (ptr == nullptr)
+        return;
+
+    while (!ptr->rthread)
+        ptr = ptr->right;
+
+    cout << "Reverse Inorder Using Threads: ";
+
+    while (ptr != nullptr)
+    {
+        cout << ptr->data << " ";
+        ptr = predecessor(ptr);
+    }
+
+    cout << endl;
+}
+
+// Conventional reverse inorder traversal
+void reverseConventional(Node* root)
+{
+    if (root == nullptr)
+        return;
+
+    if (!root->rthread)
+        reverseConventional(root->right);
+
+    cout << root->data << " ";
+
+    if (!root->lthread)
+        reverseConventional(root->left);
 }
 
 int main()
 {
     Node* root = nullptr;
-    int choice, id;
-    string name;
-    float price;
 
-    do
+    root = insert(root, 40);
+    root = insert(root, 20);
+    root = insert(root, 60);
+    root = insert(root, 10);
+    root = insert(root, 30);
+    root = insert(root, 50);
+    root = insert(root, 70);
+
+    int key;
+    cout << "Enter node to find predecessor: ";
+    cin >> key;
+
+    Node* ptr = root;
+
+    while (ptr != nullptr)
     {
-        cout << "\n1. Add Product";
-        cout << "\n2. Search Product";
-        cout << "\n3. Display Products";
-        cout << "\n4. Delete Product";
-        cout << "\n5. Exit";
-        cout << "\nEnter choice: ";
-        cin >> choice;
+        if (key == ptr->data)
+            break;
 
-        switch (choice)
+        if (key < ptr->data)
         {
-        case 1:
-            cout << "Enter Product ID: ";
-            cin >> id;
-            cout << "Enter Product Name: ";
-            cin >> name;
-            cout << "Enter Product Price: ";
-            cin >> price;
-            root = insert(root, id, name, price);
-            break;
-
-        case 2:
-            cout << "Enter Product ID to search: ";
-            cin >> id;
-
-            if (search(root, id))
-                cout << "Product Found!\n";
+            if (ptr->lthread)
+                ptr = nullptr;
             else
-                cout << "Product Not Found!\n";
-            break;
-
-        case 3:
-            cout << "\nProduct List:\n";
-            display(root);
-            break;
-
-        case 4:
-            cout << "Enter Product ID to delete: ";
-            cin >> id;
-
-            if (search(root, id))
-            {
-                root = deleteProduct(root, id);
-                cout << "Product Deleted!\n";
-            }
-            else
-                cout << "Product Not Found!\n";
-            break;
-
-        case 5:
-            cout << "Thank You! \n";
-            break;
-
-        default:
-            cout << "Invalid Choice!\n";
+                ptr = ptr->left;
         }
+        else
+        {
+            if (ptr->rthread)
+                ptr = nullptr;
+            else
+                ptr = ptr->right;
+        }
+    }
 
-    } while (choice != 5);
+    if (ptr == nullptr)
+    {
+        cout << "Node not found!\n";
+    }
+    else
+    {
+        Node* pred = predecessor(ptr);
+
+        if (pred != nullptr)
+            cout << "Inorder Predecessor of "
+                 << key << " is " << pred->data << endl;
+        else
+            cout << "No inorder predecessor exists.\n";
+    }
+
+    displayThreads(root);
+
+    reverseThreaded(root);
+
+    cout << "Reverse Inorder Using Conventional BST: ";
+    reverseConventional(root);
+    cout << endl;
 
     return 0;
 }
