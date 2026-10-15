@@ -1,0 +1,4 @@
+## Objective
+To find the inorder predecessors of multiple nodes in a Threaded Binary Search Tree.
+To display a message when a node has no predecessor.
+To identify whether the predecessor is found through a thread or a left subtree.
