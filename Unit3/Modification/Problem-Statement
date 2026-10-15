@@ -1,0 +1,3 @@
+## Problem Statement:
+Develop a Train Coach Management System using a Doubly Linked List in C++. The system should support adding coaches at the beginning, 
+displaying coaches in forward and reverse order, deleting the first coach, and searching for a coach number.
