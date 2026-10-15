@@ -1,0 +1,7 @@
+To understand the concept of a Doubly Linked List.
+To insert a new coach at the beginning of the train.
+To display all coaches in forward order.
+To display all coaches in reverse order.
+To delete the first coach from the train.
+To search for a coach using its coach number.
+To understand bidirectional traversal using prev and next pointers.
