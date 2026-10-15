@@ -1,0 +1,12 @@
+## Algorithm
+Start the program.
+Create an inorder-threaded binary search tree.
+Insert the required elements into the tree.
+Accept multiple node values from the user.
+Search for each specified node.
+If the node does not exist, display a message.
+If the node has no inorder predecessor, display that no predecessor exists.
+If the node has a left subtree, find the rightmost node in that subtree.
+Otherwise, find the predecessor using the inorder thread.
+Display the predecessor and whether it was found through a thread or subtree.
+Stop the program.
