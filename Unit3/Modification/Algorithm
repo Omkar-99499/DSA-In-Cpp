@@ -1,0 +1,12 @@
+Start the program.
+Initialize the head pointer to NULL.
+Display the menu: Add Coach at Beginning, Display Forward, Display Reverse, Delete First Coach, Search Coach, and Exit.
+Accept the user's choice.
+If Add Coach is selected, insert a new coach at the beginning of the doubly linked list.
+If Display Forward is selected, display all coaches from first to last.
+If Display Reverse is selected, traverse to the last coach and display coaches in reverse order.
+If Delete First Coach is selected, remove the first node and update the head pointer.
+If Search Coach is selected, search for the specified coach number.
+If Exit is selected, release allocated memory and terminate the program.
+Repeat the menu until Exit is selected.
+Stop.
