@@ -1,4 +1,0 @@
-## Problem Statement
-Write a C++ program to find the inorder predecessor of a specified node in an inorder-threaded binary search tree. 
-The program should also display predecessor and successor threads for every node, perform reverse inorder traversal using threads,
-and compare the traversal output with a conventional BST traversal.
