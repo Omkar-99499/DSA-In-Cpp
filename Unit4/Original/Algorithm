@@ -1,0 +1,11 @@
+##  Algorithm
+
+Start the program.
+Create an inorder-threaded binary search tree.
+Insert the given nodes into the tree.
+Identify the inorder predecessor of the specified node.
+Display the predecessor and successor threads for every node.
+Perform reverse inorder traversal using threads.
+Perform conventional reverse inorder traversal.
+Compare both traversal outputs.
+Stop the program.
