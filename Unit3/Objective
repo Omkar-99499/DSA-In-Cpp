@@ -1,8 +1,0 @@
-## Objectives
-To understand the concept of a Singly Linked List.
-To create and manage train coaches dynamically.
-To insert a new coach into the train.
-To display all train coaches.
-To delete the first coach from the train.
-To understand pointers and dynamic memory allocation in C++.
-To perform insertion, deletion, and traversal operations using a linked list.
