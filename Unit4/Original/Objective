@@ -1,0 +1,6 @@
+## Objectives
+To understand the concept of an inorder-threaded binary tree.
+To find the inorder predecessor of a given node.
+To display predecessor and successor threads for every node.
+To perform reverse inorder traversal using threads.
+To compare threaded traversal with conventional BST traversal.
