@@ -1,0 +1,26 @@
+## Algorithm
+
+Step 1: Start the program.
+
+Step 2: Initialize the head pointer to NULL.
+
+Step 3: Display the menu:
+
+1. Add Coach
+2. Display Coaches
+3. Remove First Coach
+4. Exit
+
+Step 4: Accept the user's choice.
+
+Step 5: If the choice is Add Coach, create a new node and add it to the linked list.
+
+Step 6: If the choice is Display Coaches, traverse the linked list and display all coach numbers.
+
+Step 7: If the choice is Remove First Coach, delete the first node and update the head pointer.
+
+Step 8: If the choice is Exit, terminate the program.
+
+Step 9: Repeat the process until the user selects Exit.
+
+Step 10: Stop the program.
