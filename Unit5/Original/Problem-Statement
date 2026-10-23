@@ -1,0 +1,4 @@
+## Problem Statement
+Develop a C++ program to represent users in a social network as vertices and friendships as edges. Apply BFS from a 
+user-selected starting vertex and display the visitation order. Also count the users reachable from the starting user 
+and report any users that remain unvisited.
