@@ -1,0 +1,15 @@
+## Algorithm
+
+Start the program.
+Read the number of users and friendships.
+Create a graph using an adjacency list.
+Add edges between users according to their friendships.
+Select the starting user.
+Initialize all users as unvisited.
+Insert the starting user into the queue and mark it as visited.
+Remove a user from the queue and display it.
+Visit all its unvisited adjacent users and insert them into the queue.
+Repeat steps 8 and 9 until the queue becomes empty.
+Count the reachable users.
+Display the users who remain unvisited.
+Stop the program.
