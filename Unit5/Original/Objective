@@ -1,0 +1,8 @@
+## objective
+
+To represent a social network using a graph.
+To represent users as vertices and friendships as edges.
+To implement Breadth-First Search (BFS).
+To display the BFS visitation order.
+To count the reachable users.
+To identify unvisited users.
