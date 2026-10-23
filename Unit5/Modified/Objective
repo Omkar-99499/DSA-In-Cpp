@@ -1,0 +1,8 @@
+## Objective
+
+To represent a social network using a graph.
+To perform BFS traversal from a selected starting vertex.
+To display the traversal order.
+To identify reachable and unvisited vertices.
+To count reachable vertices.
+To display BFS levels.
